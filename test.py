@@ -42,7 +42,7 @@ if __name__=="__main__":
 
 
     if medaka_model:
-        command = f'medaka_consensus -i {input_reads} -d {output} -o medaka_result -m {medaka_model} -t ${num_processes} > medaka.log'
+        command = f'medaka_consensus -i {input_reads} -d {output} -o medaka_result -m {medaka_model} -t {num_processes} > medaka.log'
         conda_env = 'medaka'
         execute_command_in_conda_env(conda_env, command)
         subprocess.run(f'cp ./medaka_result/consensus.fasta {output}, shell=True')
