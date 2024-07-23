@@ -34,7 +34,7 @@ if __name__=="__main__":
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     
     
-    parser.add_argument("-p", "--processes", help="number of processes", default= 4)
+    parser.add_argument("-p", "--processes", help="number of processes", type=int, default= 4)
     parser.add_argument("-f", "--file", help="dir of the fasta files")
     parser.add_argument("-o", "--output", help="output dir")
     parser.add_argument("--udance", help="path to udance dir")
