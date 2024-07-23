@@ -74,17 +74,17 @@ if __name__=="__main__":
     command = f'snakemake -c {num_processes} --configfile config1.yaml --snakefile udance.smk all'
     execute_command_in_conda_env('udance', command)
 
-    # round2
-    subprocess.run(f'cp {output_folder}/output/udance.maxqs.nwk {output_folder}/backbone.nwk', shell=True)
-    subprocess.run(f'rm {output_folder}/udance.log', shell=True)
-    subprocess.run(f'rm -rf {output_folder}/output', shell=True)
-
-
-    data['backbone'] = 'tree'
-    with open('config2.yaml', 'w') as file:
-        yaml.safe_dump(data, file)
-    command = f'snakemake -c {num_processes} --configfile config2.yaml --snakefile udance.smk all'
-    execute_command_in_conda_env('udance', command)
-    
-    subprocess.run(f'mv {output_folder}/output {output_folder}/udance_output', shell=True)
-    subprocess.run(f'cp {output_folder}/output/udance.maxqs.nwk {output_folder}/tree.nwk', shell=True)
+    # # round2
+    # subprocess.run(f'cp {output_folder}/output/udance.maxqs.nwk {output_folder}/backbone.nwk', shell=True)
+    # subprocess.run(f'rm {output_folder}/udance.log', shell=True)
+    # subprocess.run(f'rm -rf {output_folder}/output', shell=True)
+    #
+    #
+    # data['backbone'] = 'tree'
+    # with open('config2.yaml', 'w') as file:
+    #     yaml.safe_dump(data, file)
+    # command = f'snakemake -c {num_processes} --configfile config2.yaml --snakefile udance.smk all'
+    # execute_command_in_conda_env('udance', command)
+    #
+    # subprocess.run(f'mv {output_folder}/output {output_folder}/udance_output', shell=True)
+    # subprocess.run(f'cp {output_folder}/output/udance.maxqs.nwk {output_folder}/tree.nwk', shell=True)
